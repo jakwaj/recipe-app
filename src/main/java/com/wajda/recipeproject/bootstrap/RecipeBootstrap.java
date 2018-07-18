@@ -90,6 +90,9 @@ public class RecipeBootstrap implements ApplicationListener<ContextRefreshedEven
         guacamoleNote.setRecipe(guacamole);
 
         guacamole.setNotes(guacamoleNote);
+        guacamole.setUrl("http://przepiski.pl");
+        guacamole.setServings(4);
+        guacamole.setSource("Przepiski");
 
         guacamole.addIngredient(new Ingredient("ripe avocados", new BigDecimal(2), each, guacamole));
         guacamole.addIngredient(new Ingredient("kosher salt", new BigDecimal("0.5"), teaspoon, guacamole));
