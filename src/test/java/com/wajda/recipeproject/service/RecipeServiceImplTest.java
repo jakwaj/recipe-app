@@ -1,5 +1,7 @@
 package com.wajda.recipeproject.service;
 
+import com.wajda.recipeproject.converters.RecipeCommandToRecipe;
+import com.wajda.recipeproject.converters.RecipeToRecipeCommand;
 import com.wajda.recipeproject.model.Recipe;
 import com.wajda.recipeproject.repository.RecipeRepository;
 import org.junit.Before;
@@ -22,10 +24,16 @@ public class RecipeServiceImplTest {
     @Mock
     RecipeRepository recipeRepository;
 
+    @Mock
+    RecipeToRecipeCommand recipeToRecipeCommand;
+
+    @Mock
+    RecipeCommandToRecipe recipeCommandToRecipe;
+
     @Before
     public void setUp() throws Exception {
         MockitoAnnotations.initMocks(this);
-        recipeService = new RecipeServiceImpl(recipeRepository);
+        recipeService = new RecipeServiceImpl(recipeRepository, recipeCommandToRecipe, recipeToRecipeCommand);
     }
 
     @Test
